@@ -1,0 +1,161 @@
+// Змінні
+$primary-color = #007bff
+$secondary-color = #da8383
+$bg-color = #e9ecef
+$text-color = #fff
+$dark-color = rgba(0, 0, 0, 0.85)
+
+// Загальні стилі
+body
+  font-family Arial, sans-serif
+  margin 0
+  padding 0
+  box-sizing border-box
+  background-color $bg-color
+  margin-bottom 25px
+
+header
+  display flex
+  justify-content space-between
+  align-items center
+  padding 10px 20px
+  background-color $secondary-color
+  border-bottom 1px solid #ddd
+
+.logo
+  font-size 24px
+  font-weight bold
+
+.register-btn
+  background-color $primary-color
+  color $text-color
+  text-decoration none
+  padding 10px 15px
+  border-radius 5px
+  transition background-color 0.3s ease
+
+  &:hover
+    background-color darken($primary-color, 10%)
+
+.hero
+  display flex
+  align-items center
+  justify-content space-between
+  padding 20px
+  background-color $bg-color
+
+.hero-container
+  display flex
+  width 100%
+  gap 20px
+
+.content
+  flex 1
+
+.hero-image
+  flex 1
+  text-align right
+
+.hero-image img
+  max-width 100%
+  height auto
+  border-radius 10px
+
+.grid-section
+  padding 20px
+  display grid
+  grid-template-columns repeat(3, 1fr)
+  gap 20px
+  background-image url('img2.jpg')
+  background-size cover
+  background-position center
+  color $text-color
+
+  .card
+    background-color rgba(0, 0, 0, 0.6)
+    border 1px solid #ddd
+    border-radius 5px
+    padding 15px
+    text-align center
+
+.card
+  background-color $text-color
+  border 1px solid #ddd
+  border-radius 5px
+  padding 15px
+  text-align center
+
+.register-container
+  grid-column span 3
+  text-align center
+  margin-top 10px
+
+.steps-section
+  padding 20px
+  background-color $bg-color
+  text-align center
+
+.steps
+  display flex
+  justify-content center
+  gap 20px
+  flex-wrap wrap
+
+.step
+  background-color $text-color
+  border 1px solid #ddd
+  border-radius 5px
+  padding 15px
+  width 150px
+
+.steps-section .register-btn
+  display inline-block
+  margin-top 20px
+
+.footer
+  position fixed
+  bottom 0
+  left 0
+  width 100%
+  text-align center
+  background-color $dark-color
+  color $text-color
+  margin-top 20px
+  justify-content center
+
+table
+  margin 0 auto
+  border-collapse collapse
+  width auto
+  max-width 600px
+
+td
+  border 0px solid $bg-color
+  padding 10px
+  text-align center
+
+.list
+  display flex
+  flex-direction column
+  padding 20px
+  background-color $bg-color
+  color #000
+
+  .list-logo
+    text-align left
+    margin-bottom 20px
+    font-size 24px
+    font-weight bold
+
+  .list-links
+    display flex
+    justify-content center
+
+// Адаптивний дизайн
+@media (max-width: 768px)
+  .grid-section
+    display block
+    margin-block 10px
+
+  .card
+    margin-top 10px

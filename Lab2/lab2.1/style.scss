@@ -1,0 +1,182 @@
+// Variables
+$font-stack: Arial, sans-serif;
+$primary-color: burlywood;
+$text-color: #333;
+$background-light: #f9f9f9;
+$background-dark: rgba(0, 0, 0, 0.85);
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button-style($bg-color: #ddd, $radius: 5px) {
+  padding: 5px;
+  border: 1px solid #ccc;
+  background: $bg-color;
+  border-radius: $radius;
+  cursor: pointer;
+}
+
+// Global reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Body
+body {
+  font-family: $font-stack;
+  line-height: 1.6;
+}
+
+// Header
+.header {
+  @include flex-center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: $primary-color;
+  padding: 10px 20px;
+
+  .logo {
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  .top-nav {
+    a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: $text-color;
+    }
+  }
+
+  .search-bar {
+    display: flex;
+
+    input {
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px 0 0 5px;
+    }
+
+    button {
+      @include button-style();
+    }
+  }
+}
+
+// Main container
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+
+  .sidebar {
+    width: 200px;
+    background: $background-light;
+    padding: 10px;
+    flex-shrink: 0;
+
+    ul {
+      list-style: none;
+
+      li {
+        a {
+          display: block;
+          padding: 5px;
+          text-decoration: none;
+          color: $text-color;
+
+          &:hover {
+            background: #ddd;
+          }
+        }
+      }
+    }
+  }
+
+  .content {
+    flex: 1;
+    padding: 10px;
+    min-width: 300px;
+
+    .large-image {
+      margin-bottom: 20px;
+
+      img {
+        width: 80%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    .content-item {
+      background: $background-light;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .trending {
+    width: 200px;
+    background: $background-light;
+    padding: 10px;
+    flex-shrink: 0;
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        a {
+          display: block;
+          padding: 5px;
+          text-decoration: none;
+          color: $text-color;
+
+          &:hover {
+            background: #ddd;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Footer
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: $background-dark;
+  color: #fff;
+  padding: 10px;
+  margin-top: 20px;
+  @include flex-center;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar, .trending {
+    width: 100%;
+  }
+}

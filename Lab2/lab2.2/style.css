@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 25px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+}
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+header input[type=text] {
+  flex: 1;
+  margin: 0 15px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+header .cart {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+header .cart:hover {
+  background-color: rgb(60.5577689243, 139.4422310757, 63.7450199203);
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+.main nav {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+.main nav h3 {
+  margin-bottom: 10px;
+}
+.main nav ul {
+  list-style: none;
+}
+.main nav ul li {
+  margin-bottom: 5px;
+}
+.main nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+.main .products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.product {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
+  text-align: center;
+}
+.product img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.product h4 {
+  margin: 10px 0;
+}
+.product p {
+  color: rgb(127.5, 127.5, 127.5);
+  font-size: 14px;
+}
+.product button {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.product button:hover {
+  background-color: rgb(68.2788844622, 157.2211155378, 71.8725099602);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  input[type=text] {
+    margin: 50px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

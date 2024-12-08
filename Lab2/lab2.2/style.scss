@@ -1,0 +1,155 @@
+// Variables
+$primary-color: #4CAF50;
+$secondary-color: #f8f8f8;
+$text-color: #333;
+$border-color: #ddd;
+
+// Mixins
+@mixin button-style($bg-color, $hover-color) {
+  padding: 5px 10px;
+  background-color: $bg-color;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+// General Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 25px;
+}
+
+// Header
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: $secondary-color;
+  border-bottom: 1px solid $border-color;
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  input[type="text"] {
+    flex: 1;
+    margin: 0 15px;
+    padding: 5px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+  }
+
+  .cart {
+    @include button-style($primary-color, darken($primary-color, 10%));
+  }
+}
+
+// Main Layout
+.main {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 20px;
+  padding: 20px;
+
+  nav {
+    background-color: lighten($secondary-color, 5%);
+    padding: 10px;
+    border-radius: 5px;
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        margin-bottom: 5px;
+
+        a {
+          text-decoration: none;
+          color: $text-color;
+        }
+      }
+    }
+  }
+
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+}
+
+// Product Card
+.product {
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
+  text-align: center;
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  h4 {
+    margin: 10px 0;
+  }
+
+  p {
+    color: lighten($text-color, 30%);
+    font-size: 14px;
+  }
+
+  button {
+    @include button-style($primary-color, darken($primary-color, 5%));
+  }
+}
+
+// Footer
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  input[type="text"] {
+    margin: 50px;
+  }
+}

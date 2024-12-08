@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: burlywood;
+  padding: 10px 20px;
+}
+.header .logo {
+  font-weight: bold;
+  font-size: 24px;
+}
+.header .top-nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+}
+.header .search-bar {
+  display: flex;
+}
+.header .search-bar input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+}
+.header .search-bar button {
+  padding: 5px;
+  border: 1px solid #ccc;
+  background: #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+.container .sidebar {
+  width: 200px;
+  background: #f9f9f9;
+  padding: 10px;
+  flex-shrink: 0;
+}
+.container .sidebar ul {
+  list-style: none;
+}
+.container .sidebar ul li a {
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  color: #333;
+}
+.container .sidebar ul li a:hover {
+  background: #ddd;
+}
+.container .content {
+  flex: 1;
+  padding: 10px;
+  min-width: 300px;
+}
+.container .content .large-image {
+  margin-bottom: 20px;
+}
+.container .content .large-image img {
+  width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.container .content .content-item {
+  background: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.container .trending {
+  width: 200px;
+  background: #f9f9f9;
+  padding: 10px;
+  flex-shrink: 0;
+}
+.container .trending h3 {
+  margin-bottom: 10px;
+}
+.container .trending ul {
+  list-style: none;
+}
+.container .trending ul li a {
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  color: #333;
+}
+.container .trending ul li a:hover {
+  background: #ddd;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 10px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .sidebar, .trending {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
